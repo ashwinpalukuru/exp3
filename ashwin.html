@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>SAI ASHWIN PALUKURU | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Reset & base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: #fff;
+            color: #000;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.45;
+        }
+
+        /* page container */
+        .wrap {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 40px 48px;
+        }
+
+        /* header / hero */
+        header {
+            text-align: center;
+            padding: 28px 0 48px;
+        }
+
+        header h1 {
+            font-size: 34px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        header .subtitle {
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+            opacity: 0.85;
+        }
+
+        .reach-btn {
+            display: inline-block;
+            padding: 10px 36px;
+            border: 1px solid #000;
+            background: transparent;
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background .15s, color .15s;
+        }
+
+        .reach-btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        /* main grid: left labels + right content */
+        .main {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 36px;
+            align-items: start;
+            margin-top: 40px;
+        }
+
+        /* left column labels */
+        .labels {
+            position: relative;
+        }
+
+        .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.6px;
+            font-weight: 600;
+            margin-bottom: 28px;
+            color: #111;
+        }
+
+        /* large section title shown (mimic the image's big left labels) */
+        .big-title {
+            font-size: 40px;
+            font-weight: 300;
+            margin: 6px 0 40px;
+        }
+
+        /* content column (right) */
+        .content-section {
+            border-top: 0;
+        }
+
+        /* ABOUT */
+        .about .section-heading {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: .6px;
+            margin-bottom: 16px;
+        }
+
+        .about .title {
+            font-size: 46px;
+            font-weight: 300;
+            margin-bottom: 18px;
+        }
+
+        .about p.lead {
+            font-size: 16px;
+            max-width: 760px;
+            color: #111;
+            margin-bottom: 22px;
+        }
+
+        .about .divider {
+            height: 1px;
+            background: #e6e6e6;
+            margin: 28px 0;
+            width: 100%;
+        }
+
+        /* Projects block uses a two-column inner grid for entries */
+        .projects .project-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 22px;
+        }
+
+        .project {
+            display: flex;
+            gap: 18px;
+        }
+
+        .project .meta {
+            min-width: 110px;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+        }
+
+        .project .body h4 {
+            margin-bottom: 8px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .project .body p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #111;
+            max-width: 700px;
+        }
+
+        /* Education & Skills */
+        .side-by-side {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 26px;
+            margin-top: 24px;
+        }
+
+        .edu h5,
+        .skills h5 {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: .6px;
+        }
+
+        .edu p,
+        .skills p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #111;
+        }
+
+        .skills .skill-list {
+            margin-top: 6px;
+            font-size: 14px;
+            color: #111;
+        }
+
+        /* contact footer area */
+        .contact {
+            margin-top: 54px;
+            padding-top: 28px;
+            border-top: 1px solid #e6e6e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact .left {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .contact .info {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            font-size: 14px;
+            color: #111;
+        }
+
+        /* small screens */
+        @media (max-width: 880px) {
+            .wrap {
+                padding: 28px;
+            }
+
+            .main {
+                grid-template-columns: 1fr;
+            }
+
+            .labels {
+                order: 2;
+                display: flex;
+                gap: 18px;
+                align-items: baseline;
+                flex-wrap: wrap;
+            }
+
+            .big-title {
+                font-size: 32px;
+            }
+
+            .project {
+                flex-direction: column;
+            }
+
+            .side-by-side {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .reach-btn {
+                padding: 8px 20px;
+            }
+
+            .about .title {
+                font-size: 28px;
+            }
+
+            .labels {
+                display: none;
+            }
+
+            /* hide large left labels on tiny screens to save space */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- Header -->
+        <header>
+            <h1>SAI ASHWIN PALUKURU</h1>
+            <div class="subtitle">DATA SCIENCE STUDENT</div>
+            <a class="reach-btn" href="#contact">Reach out</a>
+        </header>
+
+        <!-- Main two-column layout -->
+        <div class="main">
+            <!-- Left labels column (like the big left headings in the image) -->
+            <aside class="labels">
+                <div class="label">Who I Am</div>
+                <div class="big-title">About Me</div>
+
+                <div style="height:28px;"></div>
+
+                <div class="label">Projects</div>
+                <div class="big-title" style="font-size:30px; font-weight:400;">Work</div>
+
+                <div style="height:18px;"></div>
+
+                <div class="label">What I Can Do</div>
+                <div class="big-title" style="font-size:28px; font-weight:400;">Education<br>& Skills</div>
+            </aside>
+
+            <!-- Right content column -->
+            <div class="content-section">
+                <!-- ABOUT -->
+                <section class="about">
+                    <div class="section-heading">Who I Am and What I Do</div>
+                    <div class="title">About Me</div>
+
+                    <p class="lead"><strong>My name is Sai Ashwin Palukuru.</strong> I'm a Computer Science and
+                        Engineering
+                        student focused on the intersection of Applied AI, Cyber Resilience, and Green Technology. I'm
+                        passionate
+                        about developing intelligent, responsible systems that provide tangible, real-world value. My
+                        experience
+                        includes anomaly detection systems, ethical deep learning solutions, and sustainability-focused
+                        tooling. I
+                        aim to create secure, transparent and scalable software that solves real problems.</p>
+
+                    <div class="divider"></div>
+                </section>
+
+                <!-- PROJECTS -->
+                <section class="projects">
+                    <div style="font-size:18px; font-weight:600; margin-bottom:18px;">Projects that I worked on:</div>
+
+                    <div class="project-list">
+                        <div class="project">
+                            <div class="meta">2024</div>
+                            <div class="body">
+                                <h4>Prediction of G20 Economies</h4>
+                                <p>Developed predictive models to forecast macroeconomic indicators across G20
+                                    countries. Collected and
+                                    engineered time-series macroeconomic datasets, applied feature selection and
+                                    ensemble machine learning
+                                    methods to model GDP growth, inflation trends and trade patterns. The deliverable
+                                    includes
+                                    country-level forecasts, uncertainty estimates, and visualizations to support policy
+                                    and investment
+                                    decisions.</p>
+                            </div>
+                        </div>
+
+                        <div class="project">
+                            <div class="meta">2024</div>
+                            <div class="body">
+                                <h4>Deepfake Detection using CNN</h4>
+                                <p>Built a convolutional neural network to detect manipulated facial media. The system
+                                    extracts spatial
+                                    and temporal inconsistencies, analyzes compression and artifact signatures, and
+                                    achieves robust
+                                    classification across varied datasets. Designed training pipelines, augmentation
+                                    strategies, and
+                                    evaluation metrics to maximize generalization to unseen deepfake styles.</p>
+                            </div>
+                        </div>
+
+                        <div class="project">
+                            <div class="meta">Major</div>
+                            <div class="body">
+                                <h4>Major Project — (Placeholder)</h4>
+                                <p>End-to-end capstone integrating advanced machine learning and system design to solve
+                                    a domain
+                                    problem. Includes problem formulation, dataset engineering, model training &
+                                    evaluation, and
+                                    deployment considerations. (Tell me the exact major project topic and I’ll replace
+                                    this with a
+                                    polished detailed write-up.)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education & Skills -->
+                    <div class="side-by-side" style="margin-top:30px;">
+                        <div class="edu">
+                            <h5>Education</h5>
+                            <p><strong>New Horizon College of Engineering</strong><br> B.E. — CSE (Data Science)</p>
+                        </div>
+
+                        <div class="skills">
+                            <h5>Skills</h5>
+                            <div class="skill-list">
+                                Programming: Python, Java, C<br>
+                                Libraries & Tools: Pandas, NumPy, Scikit-learn, TensorFlow / PyTorch, Flask<br>
+                                ML: Regression, Classification, Clustering, Feature Engineering<br>
+                                Other: APIs, Data Visualization, Problem Solving, Model Deployment
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact -->
+                <section id="contact" class="contact" aria-label="contact">
+                    <div class="left">Reach out</div>
+                    <div class="info">
+                        <div><strong>Address</strong>
+                            <div style="font-weight:400;">Bengaluru, Karnataka</div>
+                        </div>
+                        <div style="border-left:1px solid #e6e6e6; padding-left:14px;"><strong>Email</strong>
+                            <div style="font-weight:400;">ashwin@gmail.com</div>
+                        </div>
+                        <div style="border-left:1px solid #e6e6e6; padding-left:14px;"><strong>Phone</strong>
+                            <div style="font-weight:400;">9876543210</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
